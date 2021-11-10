@@ -13,27 +13,32 @@ public class EmployeeWages {
             base = monthlyHours * 200;
             bonus = dayToGoal * 250;
             wage = base + bonus;
-        }else System.out.println("Invalid type");
+        }
         return wage;
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int i =1;
-        while (i ==1) {
+        int i = 1;
+        while (i == 1) {
             System.out.println("Select the type of worker");
             int typeOfWorker = scanner.nextInt();
-            System.out.println("Insert monthly work hours");
-            int monthlyHours = scanner.nextInt();
-            System.out.println("Insert days of meeting the goal");
-            int dayToGoal = scanner.nextInt();
-            int wageWorker = wage(typeOfWorker, monthlyHours, dayToGoal);
-            System.out.println("Your wage is: " + wageWorker);
-            System.out.println("Are you want to continue?");
-            int stop = scanner.nextInt();
-            if (stop == 0){
-                i++;
+            if (typeOfWorker != 0 && typeOfWorker != 1) {
+                System.out.println("Invalid type");
+            } else {
+                System.out.println("Insert monthly work hours");
+                int monthlyHours = scanner.nextInt();
+                System.out.println("Insert days of meeting the goal");
+                int dayToGoal = scanner.nextInt();
+                int wageWorker = wage(typeOfWorker, monthlyHours, dayToGoal);
+                System.out.println("Your wage is: " + wageWorker);
+                System.out.println("0 to end, other number to continue");
+                int stop = scanner.nextInt();
+                if (stop == 0) {
+                    i++;
+                }
+            System.out.println("GoodBye!");
             }
-        } System.out.println("GoodBye!");
+        }
     }
 }
