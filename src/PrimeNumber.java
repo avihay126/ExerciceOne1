@@ -13,7 +13,7 @@ public class PrimeNumber {
 
     public static void main(String[] args) {
         int positiveNumber =positiveNumber();
-        for (int i = 2; i<=positiveNumber;i++){
+        for (int i = 1; i<=positiveNumber;i++){
             boolean result = primeNumber(i);
             if (result==false) {
                 System.out.print(i+" ");
@@ -33,13 +33,15 @@ public class PrimeNumber {
         boolean result=false;
         if (number==1){
             result=true;
-        }
+        }else {
+
             for (int i = 2; i < number; i++) {
-               result= moduleZero(number, i);
-               if (result==true){
-                   i=number;
-               }
+                result = moduleZero(number, i);
+                if (result == true) {
+                    i = number;
+                }
             }
+        }
        return result;
     }
 }
